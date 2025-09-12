@@ -1,5 +1,4 @@
 <?php
-// app/Http/Controllers/ProductController.php
 
 namespace App\Http\Controllers;
 
@@ -41,12 +40,13 @@ class ProductController extends Controller
             'sku' => 'nullable|string|max:100',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'isActive' => 'required|boolean',
-            'categoryName' => 'required|string',
-            'brandName' => 'required|string',
+            'category_id' => 'required|exists:categories,id',
+            'brand_id' => 'required|exists:brands,id',
         ]);
 
-        $this->productService->addProduct($request->all());
+        $this->productService->addProduct($request->only([
+            'name', 'description', 'sku', 'price', 'stock', 'category_id', 'brand_id'
+        ]));
 
         return redirect()->route('products.index')
                          ->with('success', 'Produto criado com sucesso!');
@@ -75,12 +75,13 @@ class ProductController extends Controller
             'sku' => 'nullable|string|max:100',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'isActive' => 'required|boolean',
-            'categoryName' => 'required|string',
-            'brandName' => 'required|string',
+            'category_id' => 'required|exists:categories,id',
+            'brand_id' => 'required|exists:brands,id',
         ]);
 
-        $this->productService->updateProduct($id, $request->all());
+        $this->productService->updateProduct($id, $request->only([
+            'name', 'description', 'sku', 'price', 'stock', 'category_id', 'brand_id'
+        ]));
 
         return redirect()->route('products.index')
                          ->with('success', 'Produto atualizado com sucesso!');

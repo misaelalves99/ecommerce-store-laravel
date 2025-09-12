@@ -1,5 +1,3 @@
-<!-- resources/views/categories/index.blade.php -->
-
 @extends('layouts.app')
 
 @push('styles')
@@ -34,7 +32,14 @@
                         <td class="actions">
                             <a href="{{ route('categories.show', $category->id) }}" class="btn btnSecondary">Detalhes</a>
                             <a href="{{ route('categories.edit', $category->id) }}" class="btn btnWarning">Editar</a>
-                            <a href="{{ route('categories.delete', $category->id) }}" class="btn btnDanger">Excluir</a>
+
+                            <!-- Form para deletar -->
+                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btnDanger" onclick="return confirm('Tem certeza que deseja excluir esta categoria?')">Excluir</button>
+                            </form>
+
                         </td>
                     </tr>
                 @endforeach

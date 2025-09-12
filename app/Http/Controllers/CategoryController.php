@@ -34,12 +34,14 @@ class CategoryController extends Controller
         ]);
 
         $this->categoryService->addCategory($request->only(['name', 'description']));
-        return redirect()->route('categories.index')->with('success', 'Categoria criada com sucesso!');
+
+        return redirect()->route('categories.index')
+            ->with('success', 'Categoria criada com sucesso!');
     }
 
     public function edit(int $id)
     {
-        $category = $this->categoryService->getAll()->find($id);
+        $category = $this->categoryService->getById($id);
         return view('categories.edit', compact('category'));
     }
 
@@ -51,12 +53,16 @@ class CategoryController extends Controller
         ]);
 
         $this->categoryService->updateCategory($id, $request->only(['name', 'description']));
-        return redirect()->route('categories.index')->with('success', 'Categoria atualizada com sucesso!');
+
+        return redirect()->route('categories.index')
+            ->with('success', 'Categoria atualizada com sucesso!');
     }
 
     public function destroy(int $id)
     {
         $this->categoryService->deleteCategory($id);
-        return redirect()->route('categories.index')->with('success', 'Categoria removida com sucesso!');
+
+        return redirect()->route('categories.index')
+            ->with('success', 'Categoria removida com sucesso!');
     }
 }
