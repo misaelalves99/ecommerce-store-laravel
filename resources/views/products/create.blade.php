@@ -1,5 +1,3 @@
-<!-- resources/views/products/create.blade.php -->
-
 @extends('layouts.app')
 
 @section('title', 'Adicionar Produto')
@@ -71,9 +69,18 @@
             <span class="errorText">{{ $message }}</span>
         @enderror
 
+        <label class="checkboxLabel">
+            <input type="checkbox" name="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }}>
+            Produto Ativo
+        </label>
+        @error('is_active')
+            <span class="errorText">{{ $message }}</span>
+        @enderror
+
         <div class="buttonGroup">
             <button type="submit" class="btnPrimary">Adicionar</button>
             <a href="{{ route('products.index') }}" class="btnSecondary">Cancelar</a>
         </div>
     </form>
 </div>
+@endsection

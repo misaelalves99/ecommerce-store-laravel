@@ -38,11 +38,20 @@
                     <td>{{ $product->sku }}</td>
                     <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                     <td>{{ $product->stock }}</td>
-                    <td>{{ $product->isActive ? 'Ativo' : 'Inativo' }}</td>
-                    <td>
+                    <td>{{ $product->is_active ? 'Ativo' : 'Inativo' }}</td>
+                    <td class="action-buttons">
                         <a href="{{ route('products.show', $product->id) }}" class="btn btnSecondary">Detalhes</a>
                         <a href="{{ route('products.edit', $product->id) }}" class="btn btnPrimary">Editar</a>
-                        <a href="{{ route('products.delete', $product->id) }}" class="btn btnDanger">Excluir</a>
+
+                        <!-- Formulário de exclusão -->
+                        <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btnDanger"
+                                onclick="return confirm('Tem certeza que deseja excluir este produto?')">
+                                Excluir
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
