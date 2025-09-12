@@ -1,0 +1,30 @@
+/* resources/css/app.css */
+
+/* Aqui ficam os estilos globais */
+@import 'tailwindcss';
+
+/* Tipografia */
+body {
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  background: #f9fafb;
+  color: #111827;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #1f2937;
+  color: #fff;
+}
+
+.navbar a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}

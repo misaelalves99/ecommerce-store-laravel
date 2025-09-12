@@ -1,0 +1,84 @@
+/* resources/css/products/index-page.css */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.btn {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btnPrimary {
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+}
+
+.btnPrimary:hover {
+  background-color: #0056b3;
+}
+
+.btnSecondary {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+}
+
+.btnSecondary:hover {
+  background-color: #e5e7eb;
+}
+
+.btnDanger {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btnDanger:hover {
+  background-color: #b91c1c;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.product-table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}

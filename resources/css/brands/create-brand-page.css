@@ -1,0 +1,101 @@
+/* resources/css/brands/create-brand-page.css */
+
+/* Container principal */
+.container {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1f2937;
+}
+
+/* Título da página */
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Grupo de campos */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Labels */
+.controlLabel {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* Inputs */
+.formControl {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #111827;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+}
+
+.formControl:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.textDanger {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Botões */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.btnSuccess {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.btnSuccess:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
+}
+
+.btnSecondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.btnSecondary:hover {
+  background-color: #d1d5db;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}

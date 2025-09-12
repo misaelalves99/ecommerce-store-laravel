@@ -1,0 +1,121 @@
+/* resources/css/home/home-page.css */
+
+/* Container principal */
+.home-container {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2.5rem 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Título */
+.home-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Linha de botões */
+.buttonsRow {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+/* Botões */
+.btn {
+  padding: 1.1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  user-select: none;
+  width: 12rem;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Cores dos botões */
+.btnPrimary {
+  color: #2563eb;
+  border-color: #2563eb;
+  background-color: transparent;
+}
+
+.btnPrimary:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+.btnSuccess {
+  color: #16a34a;
+  border-color: #16a34a;
+  background-color: transparent;
+}
+
+.btnSuccess:hover {
+  background-color: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
+  transform: translateY(-2px);
+}
+
+.btnDark {
+  color: #1f2937;
+  border-color: #1f2937;
+  background-color: transparent;
+}
+
+.btnDark:hover {
+  background-color: #1f2937;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(31, 41, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Descrição pequena abaixo dos botões */
+.description {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-top: 0.75rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .home-container {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .buttonsRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

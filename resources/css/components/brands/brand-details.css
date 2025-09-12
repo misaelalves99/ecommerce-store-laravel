@@ -1,0 +1,38 @@
+/* resources/css/components/brands/brand-details.css */
+
+.card {
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.card-text strong {
+  color: #212529;
+}

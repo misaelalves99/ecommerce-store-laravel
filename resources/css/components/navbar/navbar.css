@@ -1,0 +1,99 @@
+/* resources/css/components/navbar/navbar.css */
+
+/* Navbar base */
+.navbar {
+  background-color: #222;
+  padding: 1rem 2rem; /* reduzido para deixar mais padrão */
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.container-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-left: auto; /* faz o menu se alinhar à direita */
+}
+
+.nav-item {
+  margin-left: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav-link:hover { background-color: #444; }
+
+.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Botão hamburguer mobile */
+.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.25rem;
+  display: none;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  left: 0;
+}
+
+.navbar-toggler-icon::before { top: -10px; }
+.navbar-toggler-icon::after { top: 10px; }
+
+.navbar-collapse { display: flex; }
+.collapse { display: none; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar-toggler { display: block; }
+  .navbar-collapse { flex-direction: column; width: 100%; }
+  .navbar-nav { flex-direction: column; margin-left: 0; }
+  .nav-item { margin-left: 0; margin-bottom: 0.5rem; }
+  .collapse { display: none; }
+}
+
+@media (min-width: 769px) {
+  .navbar-collapse { display: flex !important; }
+}

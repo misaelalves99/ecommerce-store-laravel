@@ -1,0 +1,33 @@
+/* resources/css/layouts/app.css */
+
+/* Base do body */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2563eb;
+    padding: 1rem 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
