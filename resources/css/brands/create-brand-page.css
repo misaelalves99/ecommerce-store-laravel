@@ -8,6 +8,8 @@
   border-radius: 1rem;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #1f2937;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* Título da página */
@@ -52,6 +54,7 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
+/* Mensagens de erro */
 .textDanger {
   color: #dc2626;
   font-size: 0.875rem;
@@ -78,6 +81,7 @@
   box-sizing: border-box;
 }
 
+/* Botão salvar */
 .btnSuccess {
   background-color: #16a34a;
   color: #ffffff;
@@ -89,6 +93,7 @@
   box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
 }
 
+/* Botão cancelar */
 .btnSecondary {
   background-color: #e5e7eb;
   color: #1f2937;
@@ -98,4 +103,25 @@
   background-color: #d1d5db;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }

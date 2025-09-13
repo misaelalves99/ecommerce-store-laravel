@@ -2,11 +2,11 @@
  
 @extends('layouts.app')
 
-@section('title', 'Adicionar Produto')
+@section('title', 'Adicionar Marca')
 
-@section('styles')
-<link rel="stylesheet" href="{{ asset('css/products/create-product-page.css') }}">
-@endsection
+@push('styles')
+    @vite(['resources/css/brands/create-brand-page.css'])
+@endpush
 
 @section('content')
 <div class="container">

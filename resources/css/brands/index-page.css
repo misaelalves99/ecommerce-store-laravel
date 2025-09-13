@@ -10,82 +10,54 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-}
-
-/* Botão estilizado */
-.btn {
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background-color: #007bff;
-  color: #fff;
-  border: 1px solid #007bff;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  background-color: #0056b3;
-}
-
-.btn-info {
-  background-color: #17a2b8;
-  border-color: #17a2b8;
-  color: #fff;
-}
-
-.btn-info:hover {
-  background-color: #117a8b;
-}
-
-.btn-warning {
-  background-color: #ffc107;
-  border-color: #ffc107;
-  color: #212529;
-}
-
-.btn-warning:hover {
-  background-color: #d39e00;
-}
-
-.btn-danger {
-  background-color: #dc3545;
-  border-color: #dc3545;
-  color: #fff;
-}
-
-.btn-danger:hover {
-  background-color: #c82333;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #34495e;
 }
 
 .brandList {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  font-size: 1rem;
+}
+
+.brandList thead {
+  background-color: #34495e;
+  color: #fff;
 }
 
 .brandList th,
 .brandList td {
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
   border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.brandList th {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
   text-align: left;
 }
 
 .brandList th:last-child,
 .brandList td:last-child {
   text-align: center;
+  white-space: nowrap;
+}
+
+.brandList tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .brandList tbody tr:hover {
@@ -94,9 +66,62 @@
   transition: background-color 0.2s ease;
 }
 
+/* Botões */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-left: 0.3rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btnPrimary {
+  background-color: #007bff;
+  color: #fff;
+}
+.btnPrimary:hover {
+  background-color: #0069d9;
+}
+
+.btnInfo {
+  background-color: #17a2b8;
+  color: #fff;
+}
+.btnInfo:hover {
+  background-color: #117a8b;
+}
+
+.btnWarning {
+  background-color: #ffc107;
+  color: #212529;
+}
+.btnWarning:hover {
+  background-color: #d39e00;
+}
+
+.btnDanger {
+  background-color: #dc3545;
+  color: #fff;
+}
+.btnDanger:hover {
+  background-color: #c82333;
+}
+
+/* Mensagem de vazio */
 .empty {
   text-align: center;
+  padding: 2rem;
   font-size: 1.25rem;
   color: #6c757d;
-  padding: 2rem;
 }

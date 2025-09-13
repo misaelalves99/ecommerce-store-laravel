@@ -2,6 +2,8 @@
 
 @extends('layouts.app')
 
+@section('title', 'Adicionar Categoria')
+
 @push('styles')
     @vite(['resources/css/categories/create-category-page.css'])
 @endpush
@@ -35,3 +37,4 @@
         </div>
     </form>
 </div>
+@endsection

@@ -16,6 +16,19 @@
   color: #fff;
 }
 
+.ProductList th {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.ProductList th:last-child,
+.ProductList td:last-child {
+  text-align: center;
+}
+
 .ProductList th,
 .ProductList td {
   padding: 1.25rem 1.5rem;
@@ -23,9 +36,9 @@
   vertical-align: middle;
 }
 
-.ProductList th:last-child,
 .ProductList td:last-child {
   text-align: center;
+  white-space: nowrap;
 }
 
 .ProductList tbody tr:last-child td {
@@ -38,6 +51,7 @@
   transition: background-color 0.2s ease;
 }
 
+/* Botões */
 .ProductList .btn {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
@@ -56,17 +70,35 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.ProductList .btnInfo { background-color: #17a2b8; color: #fff; }
-.ProductList .btnInfo:hover { background-color: #117a8b; }
+.ProductList .btnInfo {
+  background-color: #17a2b8;
+  color: #fff;
+}
+.ProductList .btnInfo:hover {
+  background-color: #117a8b;
+}
 
-.ProductList .btnWarning { background-color: #ffc107; color: #212529; }
-.ProductList .btnWarning:hover { background-color: #d39e00; }
+.ProductList .btnWarning {
+  background-color: #ffc107;
+  color: #212529;
+}
+.ProductList .btnWarning:hover {
+  background-color: #d39e00;
+}
 
-.ProductList .btnDanger { background-color: #dc3545; color: #fff; }
-.ProductList .btnDanger:hover { background-color: #c82333; }
+.ProductList .btnDanger {
+  background-color: #dc3545;
+  color: #fff;
+}
+.ProductList .btnDanger:hover {
+  background-color: #c82333;
+}
 
-.ProductList .btn + .btn { margin-left: 0.5rem; }
+.ProductList .btn + .btn {
+  margin-left: 0.5rem;
+}
 
+/* Badges */
 .ProductList .badge {
   display: inline-block;
   padding: 0.5em 0.75em;
@@ -78,9 +110,17 @@
   border: 1px solid currentColor;
 }
 
-.ProductList .badgeSuccess { color: #28a745; border-color: #28a745; }
-.ProductList .badgeSecondary { color: #6c757d; border-color: #6c757d; }
+.ProductList .badgeSuccess {
+  color: #28a745;
+  border-color: #28a745;
+}
 
+.ProductList .badgeSecondary {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+/* Mensagem de vazio */
 .ProductList .empty {
   text-align: center;
   padding: 2rem;

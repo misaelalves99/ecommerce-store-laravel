@@ -87,10 +87,20 @@
   background-color: #c82333;
 }
 
+.btnPrimary {
+  background-color: #007bff;
+  color: #fff;
+}
+.btnPrimary:hover {
+  background-color: #0069d9;
+}
+
+/* Espaçamento entre botões */
 .btn + .btn {
   margin-left: 0.5rem;
 }
 
+/* Estado vazio */
 .empty {
   text-align: center;
   color: #6c757d;
@@ -99,4 +109,18 @@
   background-color: #fff;
   border-radius: 0.75rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Cabeçalho da página */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #34495e;
 }

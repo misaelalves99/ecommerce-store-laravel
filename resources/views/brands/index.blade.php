@@ -10,7 +10,7 @@
 <div class="container">
     <div class="header">
         <h1 class="heading">Marcas</h1>
-        <a href="{{ route('brands.create') }}" class="btn">Adicionar Marca</a>
+        <a href="{{ route('brands.create') }}" class="btn btnPrimary">Adicionar Marca</a>
     </div>
 
     @if($brands->isEmpty())
@@ -30,12 +30,12 @@
                         <td>{{ $brand->id }}</td>
                         <td>{{ $brand->name }}</td>
                         <td>
-                            <a href="{{ route('brands.show', $brand->id) }}" class="btn btn-info">Detalhes</a>
-                            <a href="{{ route('brands.edit', $brand->id) }}" class="btn btn-warning">Editar</a>
+                            <a href="{{ route('brands.show', $brand->id) }}" class="btn btnInfo">Detalhes</a>
+                            <a href="{{ route('brands.edit', $brand->id) }}" class="btn btnWarning">Editar</a>
                             <form action="{{ route('brands.destroy', $brand->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger"
+                                <button type="submit" class="btn btnDanger"
                                     onclick="return confirm('Tem certeza que deseja excluir a marca {{ $brand->name }}?');">
                                     Excluir
                                 </button>

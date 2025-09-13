@@ -1,37 +1,31 @@
 <!-- resources/views/categories/list.blade.php -->
 
-@props(['categories'])
+@props(['brands'])
 
-@push('styles')
-    @vite('resources/css/components/categories/category-list.css')
-@endpush
-
-@if($categories->isEmpty())
-    <p class="empty">Nenhuma categoria cadastrada.</p>
+@if($brands->isEmpty())
+    <p class="empty">Nenhuma marca encontrada.</p>
 @else
-    <table class="table">
+    <table class="brandList">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Descrição</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($categories as $category)
+            @foreach($brands as $brand)
                 <tr>
-                    <td>{{ $category->id }}</td>
-                    <td>{{ $category->name }}</td>
-                    <td>{{ $category->description }}</td>
+                    <td>{{ $brand->id }}</td>
+                    <td>{{ $brand->name }}</td>
                     <td>
-                        <a href="{{ route('categories.show', $category->id) }}" class="btn btnInfo">Detalhes</a>
-                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btnWarning">Editar</a>
-
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('brands.show', $brand->id) }}" class="btn btnInfo">Detalhes</a>
+                        <a href="{{ route('brands.edit', $brand->id) }}" class="btn btnWarning">Editar</a>
+                        <form action="{{ route('brands.destroy', $brand->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btnDanger" onclick="return confirm('Deseja realmente excluir esta categoria?')">
+                            <button type="submit" class="btn btnDanger"
+                                onclick="return confirm('Tem certeza que deseja excluir a marca {{ $brand->name }}?');">
                                 Excluir
                             </button>
                         </form>

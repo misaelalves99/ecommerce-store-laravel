@@ -101,9 +101,10 @@ class ProductController extends Controller
         $product = $this->productService->getAll()->find($id);
         if (!$product) {
             return redirect()->route('products.index')
-                             ->with('error', 'Produto não encontrado.');
+                            ->with('error', 'Produto não encontrado.');
         }
 
-        return view('products.show', compact('product'));
+        // Corrigido de 'products.show' para 'products.details'
+        return view('products.details', compact('product'));
     }
 }

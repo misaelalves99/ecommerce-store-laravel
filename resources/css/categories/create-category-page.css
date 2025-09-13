@@ -8,6 +8,8 @@
   border-radius: 0.75rem;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #1f2937;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* Título da página */
@@ -90,10 +92,6 @@
 .btnSecondary {
   background-color: #e5e7eb;
   color: #1f2937;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  line-height: 1.75rem;
 }
 
 .btnSecondary:hover {
