@@ -2,17 +2,30 @@
 
 /* Navbar base */
 .navbar {
+  position: fixed; /* fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #222;
-  padding: 1rem 2rem; /* reduzido para deixar mais padrão */
+  padding: 1rem 2rem;
   color: #fff;
   font-family: Arial, sans-serif;
+  z-index: 999; /* sempre sobre o conteúdo */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+body {
+  padding-top: 70px; /* altura do navbar + espaço */
+}
+
+/* resto do CSS permanece igual */
 .container-navbar {
+  max-width: 1150px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin: 0 auto;
 }
 
 .navbar-brand {
@@ -29,7 +42,7 @@
   display: flex;
   margin: 0;
   padding: 0;
-  margin-left: auto; /* faz o menu se alinhar à direita */
+  margin-left: auto;
 }
 
 .nav-item {

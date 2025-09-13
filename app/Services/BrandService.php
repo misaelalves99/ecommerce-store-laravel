@@ -7,29 +7,24 @@ use App\Models\Brand;
 
 class BrandService
 {
-    /**
-     * Retorna todas as marcas.
-     */
     public function getAll()
     {
-        return Brand::all();
+        return Brand::all(); // Collection de Models
     }
 
-    /**
-     * Cria uma nova marca.
-     */
+    public function getById(int $id): ?Brand
+    {
+        return Brand::find($id);
+    }
+
     public function addBrand(array $data): Brand
     {
         return Brand::create([
             'name' => $data['name'],
-            'is_active' => true, // Ativo por padrão
+            'is_active' => true,
         ]);
-        // NOTA: created_at e updated_at são preenchidos automaticamente
     }
 
-    /**
-     * Atualiza uma marca existente.
-     */
     public function updateBrand(int $id, string $name): ?Brand
     {
         $brand = Brand::find($id);
@@ -39,15 +34,9 @@ class BrandService
         return $brand;
     }
 
-    /**
-     * Deleta uma marca.
-     */
     public function deleteBrand(int $id): bool
     {
         $brand = Brand::find($id);
-        if ($brand) {
-            return $brand->delete();
-        }
-        return false;
+        return $brand ? $brand->delete() : false;
     }
 }

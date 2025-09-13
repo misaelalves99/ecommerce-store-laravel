@@ -65,4 +65,17 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')
             ->with('success', 'Categoria removida com sucesso!');
     }
+
+    // Novo método show para detalhes da categoria
+    public function show(int $id)
+    {
+        $category = $this->categoryService->getById($id);
+
+        if (!$category) {
+            return redirect()->route('categories.index')
+                             ->with('error', 'Categoria não encontrada.');
+        }
+
+        return view('categories.details', compact('category'));
+    }
 }

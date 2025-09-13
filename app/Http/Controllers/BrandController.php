@@ -15,43 +15,101 @@ class BrandController extends Controller
         $this->brandService = $brandService;
     }
 
+    /**
+     * Lista todas as marcas
+     */
     public function index()
     {
         $brands = $this->brandService->getAll();
         return view('brands.index', compact('brands'));
     }
 
+    /**
+     * Formulário para criar nova marca
+     */
     public function create()
     {
         return view('brands.create');
     }
 
+    /**
+     * Salva nova marca
+     */
     public function store(Request $request)
     {
-        $request->validate(['name' => 'required|string|max:255']);
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
 
         $this->brandService->addBrand($request->only('name'));
 
-        return redirect()->route('brands.index')->with('success', 'Marca adicionada com sucesso!');
+        return redirect()->route('brands.index')
+                         ->with('success', 'Marca adicionada com sucesso!');
     }
 
+    /**
+     * Exibe detalhes de uma marca
+     */
+    public function show(int $id)
+    {
+        $brand = $this->brandService->getById($id);
+
+        if (!$brand) {
+            return redirect()->route('brands.index')
+                             ->with('error', 'Marca não encontrada.');
+        }
+
+        return view('brands.details', compact('brand'));
+    }
+
+    /**
+     * Formulário para editar uma marca
+     */
     public function edit(int $id)
     {
-        $brand = $this->brandService->getAll()->find($id);
+        $brand = $this->brandService->getById($id);
+
+        if (!$brand) {
+            return redirect()->route('brands.index')
+                             ->with('error', 'Marca não encontrada.');
+        }
+
         return view('brands.edit', compact('brand'));
     }
 
+    /**
+     * Atualiza uma marca existente
+     */
     public function update(Request $request, int $id)
     {
-        $request->validate(['name' => 'required|string|max:255']);
-        $this->brandService->updateBrand($id, $request->name);
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
 
-        return redirect()->route('brands.index')->with('success', 'Marca atualizada com sucesso!');
+        $brand = $this->brandService->updateBrand($id, $request->name);
+
+        if (!$brand) {
+            return redirect()->route('brands.index')
+                             ->with('error', 'Marca não encontrada.');
+        }
+
+        return redirect()->route('brands.index')
+                         ->with('success', 'Marca atualizada com sucesso!');
     }
 
+    /**
+     * Deleta uma marca
+     */
     public function destroy(int $id)
     {
-        $this->brandService->deleteBrand($id);
-        return redirect()->route('brands.index')->with('success', 'Marca removida com sucesso!');
+        $deleted = $this->brandService->deleteBrand($id);
+
+        if (!$deleted) {
+            return redirect()->route('brands.index')
+                             ->with('error', 'Marca não encontrada ou não pôde ser removida.');
+        }
+
+        return redirect()->route('brands.index')
+                         ->with('success', 'Marca removida com sucesso!');
     }
 }

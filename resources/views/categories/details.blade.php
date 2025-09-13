@@ -2,13 +2,15 @@
 
 @extends('layouts.app')
 
+@section('title', 'Detalhes da Categoria')
+
 @push('styles')
     @vite(['resources/css/categories/details-category-page.css'])
 @endpush
 
 @section('content')
 @php
-    $category = $category ?? null; // Deve ser passado pelo Controller
+    $category = $category ?? null; // Garantir que exista
 @endphp
 
 @if (!$category)
@@ -30,8 +32,9 @@
         </div>
 
         <div class="actions">
-            <a href="{{ route('categories.index') }}" class="btn btnSecondary">Voltar</a>
-            <a href="{{ route('categories.edit', $category->id) }}" class="btn btnPrimary">Editar</a>
+            <a href="{{ route('categories.index') }}" class="btnSecondary">Voltar</a>
+            <a href="{{ route('categories.edit', $category->id) }}" class="btnPrimary">Editar</a>
         </div>
     </div>
 @endif
+@endsection
